@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order("id DESC").limit(4)
     @parents = Category.where(ancestry: nil)
+    @favorites = Favorite.all
   end
 
   def new
